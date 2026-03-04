@@ -1,76 +1,66 @@
-🚀 Java MCP Server (Learning Project)
+🚀 Java MCP Server — Learning Project
 
-This project is a simple Java-based MCP (Model Context Protocol) server built for learning and experimentation.
+🧠 Java MCP Server — Model Context Protocol Implementation
 
-It demonstrates how Claude Desktop connects to a custom tool server using:
+Developed a custom MCP (Model Context Protocol) server using Java & Maven to understand AI tool integration architecture ⚙️.
+Implemented JSON-RPC communication over STDIN / STDOUT to enable seamless interaction with Claude Desktop 🔄.
+Built a modular tool system with proper tools/list and tools/call handling, following strict MCP protocol structure 📡.
 
-Java
-
-Maven
-
-JSON-RPC
-
-STDIN / STDOUT communication
-
-MCP protocol structure
-
+<div align="center"> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width="1000"> </div>
 🧠 What This Project Demonstrates
 
-This project helps understand:
+Deep understanding of MCP internal workflow
+Tool registration using tools/list
+Tool execution using tools/call
+Handling initialize handshake properly
+Structuring strict JSON-RPC responses
+Packaging and running .jar applications
+Understanding process-based AI tool communication
 
-How MCP works internally
-
-How tools are registered using tools/list
-
-How tools are executed using tools/call
-
-How Claude communicates with a local process
-
-How to structure JSON-RPC responses correctly
-
-How to package a Java application using Maven
-
-How Claude launches a .jar file and communicates via pipes
-
+<div align="center"> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width="1000"> </div>
 🔄 MCP Communication Flow
 
 Claude Desktop launches the JAR:
-
 java -jar mcp-java-1.0.jar
-
 Claude sends JSON-RPC messages via STDIN
 
-The Java server:
+Java server:
 
-Reads JSON
+Reads incoming JSON
 
-Processes method (initialize, tools/list, tools/call)
+Identifies method (initialize, tools/list, tools/call)
 
-Sends JSON response via STDOUT
+Processes request logic
 
-Claude receives the response and displays output
+Sends response via STDOUT
 
-🛠 Technologies Used
+Claude receives response and renders tool output
 
-Java (JDK 21)
+<div align="center"> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width="1000"> </div>
+🛠 Tech Stack
 
-Maven
+☕ Java (JDK 21)
 
-org.json library
+📦 Maven
 
-Model Context Protocol (MCP)
+📄 org.json Library
 
-Claude Desktop
+🔗 Model Context Protocol (MCP)
 
-📦 How to Build
+🤖 Claude Desktop
+
+<div align="center"> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width="1000"> </div>
+📦 Build & Run
+
+Build project:
+
 mvn clean package
 
-This generates:
+Generated file:
 
 target/mcp-java-1.0.jar
-⚙️ How to Connect with Claude Desktop
 
-In your cloud.config.json:
+Claude Desktop configuration:
 
 {
   "mcpServers": {
@@ -84,64 +74,73 @@ In your cloud.config.json:
   }
 }
 
-Restart Claude Desktop after updating config.
+Restart Claude Desktop after configuration.
 
-🧪 Example Tool
+<div align="center"> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width="1000"> </div>
+🧪 Implemented Tool
 
-This project includes a sample tool:
+helloTool
 
-helloTool – Returns a simple text response
+Returns a simple text response
 
-You can extend it to:
+Demonstrates tool registration and execution
 
-Call APIs
+Serves as foundation for building advanced integrations
 
-Connect databases
+You can extend this to:
 
-Perform text processing
+🌐 Call external APIs
 
-Run OCR
+🗄 Connect databases
 
-Execute business logic
+📊 Perform data processing
 
-🎯 Purpose of This Project
+🔎 Run OCR
 
-This project is built purely for learning MCP architecture and understanding tool integration.
+⚙️ Execute backend business logic
 
-It is not production-ready but serves as a foundation to:
+<div align="center"> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width="1000"> </div>
+🎯 Project Purpose
 
-Build custom AI tools
+Built purely for learning MCP architecture
 
-Create backend integrations
+Understanding AI tool integration design
 
-Develop advanced MCP servers
+Exploring process-based communication models
 
-📚 What I Learned
+Foundation for building advanced AI-driven backend systems
 
-MCP strict JSON structure requirements
+⚠️ This project is not production-ready. It is a structured learning implementation.
 
-Importance of inputSchema
+<div align="center"> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width="1000"> </div>
+📚 Key Learnings
 
-JSON-RPC formatting rules
+Strict MCP JSON structure validation
+
+Importance of inputSchema in tools
+
+Correct JSON-RPC formatting
 
 Difference between stdout and stderr
 
-Process-based server communication
+How Claude launches and communicates with JAR processes
 
-Debugging protocol-level errors
+Debugging protocol-level integration errors
 
+<div align="center"> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width="1000"> </div>
 🚀 Future Improvements
 
-Add multiple tools
+Add multiple dynamic tools
 
-Add argument validation
+Add schema validation layer
+
+Implement logging framework
 
 Convert to HTTP-based MCP server
 
-Add logging system
+Deploy as remote AI tool service
 
-Deploy as remote MCP service
-
+<div align="center"> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width="1000"> </div>
 👩‍💻 Author
 
-Built for learning and experimentation.
+Built for learning, experimentation, and understanding AI tool integration systems.
